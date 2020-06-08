@@ -1,0 +1,88 @@
+"PROTEIN","FBgn_vir","FBgn_mel","Sec","Annotation.symbol","Gene.name","Gene.symbol","SPN.gene"
+"maker-scaffold1741-size58143-augustus-gene-0.34-mRNA-1","FBgn0202066","FBgn0004648","Sfp",NA,NA,NA,NA
+"maker-scaffold1253-size43018-snap-gene-0.17-mRNA-1","FBgn0199275","FBgn0267348","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold533-size168304-abinit-gene-1.5-mRNA-1","FBgn0210861","FBgn0027095","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold335-size222527-abinit-gene-1.2-mRNA-1","FBgn0211573","FBgn0039568","Sfp","CG4815","-","CG4815",NA
+"maker-scaffold65-size225172-augustus-gene-2.15-mRNA-1","FBgn0211226","FBgn0039474","Sfp",NA,NA,NA,NA
+"maker-scaffold1487-size34299-snap-gene-0.4-mRNA-1","FBgn0210454","FBgn0083965","Sfp","CG34129","-","CG34129",NA
+"maker-scaffold647-size97846-augustus-gene-0.23-mRNA-1","FBgn0207310","FBgn0250842","Sfp",NA,NA,NA,NA
+"maker-scaffold562-size117067-snap-gene-1.11-mRNA-1","FBgn0198486","FBgn0052190","Sfp","CG32190","NUCB1","NUCB1",NA
+"augustus_masked-scaffold17-size143674-abinit-gene-0.8-mRNA-1","FBgn0198396","FBgn0261800","Sfp",NA,NA,NA,NA
+"maker-scaffold675-size149168-snap-gene-1.35-mRNA-1","FBgn0198284","FBgn0260462","Sfp",NA,NA,NA,NA
+"maker-scaffold94-size166406-augustus-gene-1.20-mRNA-1","FBgn0205391","FBgn0041180","Sfp","CG10363","Thioester-containing protein 4","Tep4",NA
+"maker-scaffold1079-size55514-augustus-gene-0.15-mRNA-1","FBgn0199123","FBgn0041713","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold103-size49482-abinit-gene-0.1-mRNA-1","FBgn0208385","FBgn0034753","Sfp","CG2852","-","CG2852",NA
+"maker-scaffold43-size134806-augustus-gene-1.3-mRNA-1","FBgn0209753","FBgn0020414","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold54-size515352-abinit-gene-2.6-mRNA-1","FBgn0209931","FBgn0025456","Sfp",NA,NA,NA,NA
+"maker-scaffold845-size43869-snap-gene-0.12-mRNA-1","FBgn0209043","FBgn0032213","Sfp",NA,NA,NA,NA
+"maker-scaffold3351-size6851-snap-gene-0.1-mRNA-1","FBgn0209622","FBgn0005585","Sfp","CG9429","Calreticulin","Calr",NA
+"maker-scaffold2760-size14568-augustus-gene-0.7-mRNA-1","FBgn0204112","FBgn0052667","Sfp","CG32667","short spindle 7","ssp7",NA
+"maker-scaffold268-size67922-augustus-gene-0.18-mRNA-1","FBgn0209465","FBgn0034856","Sfp",NA,NA,NA,NA
+"maker-scaffold122-size160112-snap-gene-1.32-mRNA-1","FBgn0211681","FBgn0260766","Sfp",NA,NA,NA,NA
+"maker-scaffold84-size126804-augustus-gene-1.18-mRNA-1","FBgn0211178","FBgn0037664","Sfp","CG8420","-","CG8420",NA
+"augustus_masked-scaffold2509-size17671-abinit-gene-0.1-mRNA-1","FBgn0205645","FBgn0265137","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold120-size66365-abinit-gene-0.3-mRNA-1","FBgn0210119","FBgn0004629","Sfp","CG8050","Cystatin-like","Cys",NA
+"maker-scaffold568-size93449-augustus-gene-0.45-mRNA-1","FBgn0200126","FBgn0040308","Sfp",NA,NA,NA,NA
+"maker-scaffold322-size249412-augustus-gene-1.19-mRNA-1","FBgn0199137","FBgn0036877","Sfp",NA,NA,NA,NA
+"maker-scaffold523-size59043-augustus-gene-0.18-mRNA-1","FBgn0207943","FBgn0013770","Sfp",NA,NA,NA,NA
+"maker-scaffold558-size68566-augustus-gene-0.20-mRNA-1","FBgn0198727","FBgn0286818","Sfp",NA,NA,NA,NA
+"maker-scaffold339-size100693-snap-gene-0.9-mRNA-1","FBgn0198648","FBgn0036787","Sfp",NA,NA,NA,NA
+"maker-scaffold797-size102870-snap-gene-0.55-mRNA-1","FBgn0201663","FBgn0010225","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold449-size30481-abinit-gene-0.7-mRNA-1","FBgn0197820","FBgn0039682","Sfp",NA,NA,NA,NA
+"maker-scaffold36-size68424-augustus-gene-0.20-mRNA-1","FBgn0205124","FBgn0027586","Sfp",NA,NA,NA,NA
+"maker-scaffold30-size93694-augustus-gene-0.25-mRNA-1","FBgn0199255","FBgn0002526","Sfp",NA,NA,NA,NA
+"maker-scaffold380-size92745-augustus-gene-0.38-mRNA-1","FBgn0198763","FBgn0262057","Sfp",NA,NA,NA,NA
+"maker-scaffold1213-size17525-augustus-gene-0.5-mRNA-1","FBgn0201383","FBgn0003137","Sfp",NA,NA,NA,NA
+"maker-scaffold142-size401332-augustus-gene-0.30-mRNA-1","FBgn0207344","FBgn0283510","Sfp",NA,NA,NA,NA
+"maker-scaffold142-size401332-augustus-gene-2.40-mRNA-1","FBgn0207363","FBgn0033268","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold405-size107091-abinit-gene-0.3-mRNA-1","FBgn0209320","FBgn0026403","Sfp",NA,NA,NA,NA
+"maker-scaffold3540-size9863-augustus-gene-0.2-mRNA-1","FBgn0211705","FBgn0038198","Sfp","CG3153","Niemann-Pick type C-2b","Npc2b",NA
+"augustus_masked-scaffold302-size122025-abinit-gene-0.5-mRNA-1","FBgn0208460","FBgn0004181","Sfp","CG2668","Ejaculatory bulb protein","Ebp",NA
+"maker-scaffold291-size36173-augustus-gene-0.4-mRNA-1","FBgn0204528","FBgn0250847","Sfp",NA,NA,NA,NA
+"maker-scaffold1857-size26151-augustus-gene-0.7-mRNA-1","FBgn0208534","FBgn0046879","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold530-size80273-abinit-gene-0.6-mRNA-1","FBgn0197501","FBgn0028984","Sfp","CG18525","Serpin 88Ea","Spn88Ea",NA
+"snap_masked-scaffold143-size91301-abinit-gene-0.25-mRNA-1","FBgn0208538","FBgn0028990","Sfp",NA,NA,NA,NA
+"maker-scaffold388-size32662-augustus-gene-0.17-mRNA-1","FBgn0208334","FBgn0033814","Sfp",NA,NA,NA,NA
+"maker-scaffold428-size133822-augustus-gene-1.24-mRNA-1","FBgn0207168","FBgn0033728","Sfp",NA,NA,NA,NA
+"maker-scaffold766-size47350-augustus-gene-0.18-mRNA-1","FBgn0197991","FBgn0051266","Sfp",NA,NA,NA,NA
+"maker-scaffold620-size95113-augustus-gene-0.38-mRNA-1","FBgn0211755","FBgn0037879","Sfp",NA,NA,NA,NA
+"maker-scaffold718-size61946-snap-gene-0.27-mRNA-1","FBgn0210455","FBgn0083966","Sfp","CG34130","-","CG34130",NA
+"maker-scaffold2605-size8068-augustus-gene-0.2-mRNA-1","FBgn0198322","FBgn0037290","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold733-size64302-abinit-gene-0.5-mRNA-1","FBgn0198297","FBgn0259974","Sfp","CG42484","Seminal fluid protein 84E","Sfp84E",NA
+"maker-scaffold156-size116054-augustus-gene-0.42-mRNA-1","FBgn0209887","FBgn0039102","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold37-size67411-abinit-gene-0.5-mRNA-1","FBgn0208255","FBgn0029093","Sfp",NA,NA,NA,NA
+"maker-scaffold2036-size33165-augustus-gene-0.10-mRNA-1","FBgn0203946","FBgn0027588","Sfp",NA,NA,NA,NA
+"maker-scaffold1008-size69378-augustus-gene-0.23-mRNA-1","FBgn0198013","FBgn0041711","Sfp",NA,NA,NA,NA
+"maker-scaffold6897-size1813-snap-gene-0.3-mRNA-1","FBgn0206406","FBgn0030521","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold1319-size40510-abinit-gene-0.3-mRNA-1","FBgn0210750","FBgn0032889","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold1294-size58738-abinit-gene-0.5-mRNA-1","FBgn0198572","FBgn0250848","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold38-size181029-abinit-gene-1.8-mRNA-1","FBgn0205323","FBgn0032536","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold1142-size21381-abinit-gene-0.0-mRNA-1","FBgn0210089","FBgn0039800","Sfp",NA,NA,NA,NA
+"augustus_masked-scaffold1142-size21381-abinit-gene-0.1-mRNA-1","FBgn0210091","FBgn0039800","Sfp",NA,NA,NA,NA
+"maker-scaffold3-size168552-snap-gene-0.30-mRNA-1","FBgn0198039","FBgn0015221","Sfp",NA,NA,NA,NA
+"maker-scaffold134-size79878-snap-gene-0.13-mRNA-1","FBgn0209010","FBgn0283509","Sfp",NA,NA,NA,NA
+"maker-scaffold13549-size850-augustus-gene-0.2-mRNA-1",NA,"FBgn0037036","Sfp","CG10586","Seminase","Sems","Sems"
+"augustus_masked-scaffold1317-size67552-abinit-gene-0.7-mRNA-1",NA,"FBgn0030362","Sfp","CG1803","regucalcin","regucalcin",NA
+"augustus_masked-scaffold130-size166479-abinit-gene-0.2-mRNA-1",NA,"FBgn0040093","Sfp","CG1656","lectin-46Ca","lectin-46Ca","CG1656"
+"augustus_masked-scaffold479-size32881-abinit-gene-0.8-mRNA-1",NA,"FBgn0010611","Sfp","CG4311","HMG Coenzyme A synthase","Hmgs",NA
+"augustus_masked-scaffold855-size58795-abinit-gene-0.0-mRNA-1",NA,"FBgn0041629","Sfp","CG1787","Hexosaminidase 2","Hexo2",NA
+"maker-scaffold1386-size39429-snap-gene-0.20-mRNA-1",NA,"FBgn0001218","Sfp","CG4147","Heat shock 70-kDa protein cognate 3","Hsc70-3",NA
+"snap_masked-scaffold3-size168552-abinit-gene-0.19-mRNA-1",NA,"FBgn0039562","Sfp","CG5520","Glycoprotein 93","Gp93",NA
+"maker-scaffold2197-size32082-snap-gene-0.17-mRNA-1",NA,"FBgn0030932","Sfp","CG6461","gamma-glutamyl transpeptidase","Ggt-1",NA
+"maker-scaffold977-size73884-snap-gene-0.20-mRNA-1",NA,"FBgn0010470","Sfp","CG9847","FK506-binding protein 14","Fkbp14",NA
+"snap_masked-scaffold129-size187042-abinit-gene-0.4-mRNA-1",NA,"FBgn0000592","Sfp","CG6917","Esterase 6","Est-6",NA
+"augustus_masked-scaffold213-size77900-abinit-gene-0.4-mRNA-1",NA,"FBgn0039598","Sfp","CG14061","aquarius","aqrs","Aqrs"
+"augustus_masked-scaffold215-size92894-abinit-gene-0.16-mRNA-1",NA,"FBgn0003884","Sfp","CG1913","alpha-Tubulin at 84B","alphaTub84B",NA
+"maker-scaffold292-size140720-augustus-gene-0.11-mRNA-1",NA,"FBgn0016123","Sfp","CG1462","Alkaline phosphatase 4","Alp4",NA
+"maker-scaffold2684-size17423-snap-gene-0.5-mRNA-1",NA,"FBgn0051779","Sfp","CG31779","Accessory gland protein 24A4","Acp24A4",NA
+"maker-scaffold3574-size7647-augustus-gene-0.3-mRNA-1",NA,"FBgn0023529","Sfp","CG2918","-","CG2918",NA
+"augustus_masked-scaffold364-size63546-abinit-gene-0.1-mRNA-1",NA,"FBgn0031412","Sfp","CG16995","-","CG16995",NA
+"augustus_masked-scaffold567-size50249-abinit-gene-0.9-mRNA-1",NA,"FBgn0035630","Sfp","CG10576","-","CG10576",NA
+"snap_masked-scaffold1316-size15916-abinit-gene-0.2-mRNA-1",NA,"FBgn0037650","Sfp","CG11977","-","CG11977",NA
+"snap_masked-scaffold540-size103107-abinit-gene-0.15-mRNA-1",NA,"FBgn0038014","Sfp","CG10041","-","CG10041",NA
+"maker-scaffold391-size49126-augustus-gene-0.18-mRNA-1",NA,"FBgn0038829","Sfp","CG17271","-","CG17271",NA
+"maker-scaffold528-size101938-augustus-gene-0.19-mRNA-1",NA,"FBgn0043825","Sfp","CG18284","-","CG18284",NA
+"maker-scaffold191-size139346-snap-gene-0.30-mRNA-1",NA,"FBgn0050463","Sfp","CG30463","-","CG30463",NA
+"snap_masked-scaffold54-size515352-abinit-gene-3.7-mRNA-1",NA,"FBgn0051418","Sfp","CG31418","-","CG31418",NA
+"augustus_masked-scaffold2679-size23702-abinit-gene-0.1-mRNA-1",NA,"FBgn0054002","Sfp","CG34002","-","CG34002",NA
+"maker-scaffold130-size166479-snap-gene-0.31-mRNA-1",NA,"FBgn0054033","Sfp","CG34033","-","CG34033",NA

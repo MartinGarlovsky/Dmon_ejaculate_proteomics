@@ -1,0 +1,456 @@
+---
+title: "Seminal fluid protein divergence among populations exhibiting postmating prezygotic reproductive isolation: supplementary material"
+author: "Martin D. Garlovsky$^1$$^*$, Caroline Evans$^2$, Mathew A. Rosenow$^3$, Timothy L. Karr$^4$ & Rhonda R. Snook$^5$"
+date: "June 2020"
+output:
+  pdf_document:
+    toc: no
+    fig_caption: no
+  html_document:
+    theme: readable
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+
+$^1$Department of Animal and Plant Sciences, University of Sheffield, Sheffield S10 2TN, UK  
+$^*$Current address: Department of Biology, Syracuse University, Syracuse NY 13244, USA  
+$^2$Department of Chemical and Biological Engineering, The University of Sheffield, UK, Sheffield S10 2TN, UK  
+$^3$Caris Life Sciences, Phoenix, USA  
+$^4$Centre for Mechanisms of Evolution, The Biodesign Institute, Arizona State University, USA  
+$^5$Department of Zoology, Stockholm University, Stockholm 106-91, Sweden  
+
+Corresponding author: martingarlovsky@gmail.com, 
+
+ORCiD:
+MDG: 0000-0002-3426-4341 
+CE: 0000-0003-4356-9216
+MAR: 0000-0001-5522-5715
+TLK: 0000-0002-4180-6583
+RRS: 0000-0003-1852-1448
+
+***
+
+This markdown document provides supplementary material for Garlovsky, M. D., Caroline Evans, Mathew A. Rosenow, Timothy L. Karr and Rhonda R. Snook "Seminal fluid protein divergence among populations exhibiting postmating prezygotic reproductive isolation". Complete analyses and data are available on [github](https://github.com/MartinGarlovsky/Dmon_ejaculate_proteomics). The mass spectrometry proteomics data have been deposited to the [ProteomeXchange consortium](http://proteomecentral.proteomexchange.org) via the PRIDE partner repository (Vizcaíno et al. 2016) with the dataset identifier PXD019634. The unfiltered *proteinGroups.txt* file exported from MaxQuant has been submitted to Dryad(Additional data has been submitted to [Dryad](https://doi.org/10.5061/dryad.pvmcvdnhw). 
+
+\pagebreak
+
+
+# Supplementary methods
+### Tissue collection, protein extraction and purification
+Twenty-one-day old males were anaesthetised with ether, the abdomen removed with insect pins, and placed in a drop of phosphate buffered saline (PBS). The whole reproductive tract (Fig. S1) was moved to a second drop of PBS, rinsed, the testes removed from the rest of the reproductive tract and discarded. The ejaculatory duct and bulb were separated from the accessory glands, intact where possible. Each tissue was washed in a third drop of PBS and placed in a LoBind Eppendorf tube containing 15µl lysis buffer (5% w/v sodium deoxycholate; 1% w/v sodium dodecyl sulphate) and protease inhibitor cocktail kept on ice. After reproductive tissues were harvested from 15 males the combined sample was freeze/thawed three times; placed on dry ice for 5 minutes, then placed in a water bath at 20ºC for 30 seconds and vortexed for 30 seconds. Each sample was then centrifuged at 20kG for 5 minutes at 4ºC, supernatant collected and placed in a new Eppendorf and stored at -80ºC until further processing. In total we collected three biological replicates for each tissue and each population. Biological replicate 1 consisted of 30 individuals per population (collected over two days) divided in to two equal volumes after tissue collection and processed separately. Two equal volumes of biological replicate 2 were loaded on to the mass spectrometer and biological replicate 3 was run in singlet, yielding a total of 5 LC-MS/MS runs for each tissue from each population (Fig. S1). 
+
+To quantify protein concentration to standardise loading volumes on to the mass spectrometer we ran 1µl of each sample with Laemmli buffer on an SDS-PAGE gel (Fig. S2) and performed densitometry with [GelAnalyzer](www.gelanalyzer.com). Protein samples were processed with a HiPPR™ detergent removal kit (Thermo Fisher™, Catalogue number: 88305) and reduced by the addition of 2µl 50 mM tris(2-carboxyethyl)phosphine (TCEP) followed by incubation at 60ºC for 1 hour. Samples were allowed to cool then alkylated by addition of 1µl 200mM methyl methanethiosulfonate (MMTS) for 10 minutes at room temperature. Samples were then proteolytically digested using trypsin added at a ratio of 1:20 trypsin:protein. The digestion step was performed overnight at 37ºC, followed by drying to completion using vacuum centrifugation. All samples were then resuspended in 20µl 3% v/v acetonitrile, 0.1% v/v trifluoroacetic acid prior to analysis by liquid chromatography tandem mass spectrometry (LC-MS/MS).  
+
+### LC-MS/MS data acquisition
+LC-MS/MS was performed by nano-flow liquid chromatography (U3000 RSLCnano, Thermo Fisher™) coupled to a hybrid quadrupole-orbitrap mass spectrometer (QExactive HF, Thermo Scientific™).  Peptides were separated on an Easy-Spray C18 column (75 µm x 50 cm) using a 2-step gradient from 97% solvent A (0.1% formic acid in water) to 10% solvent B (0.08% formic acid in 80% acetonitrile) over 5 min then 10% to 50% B over 75 min at 300 nL/min. A 105-minute MS data dependent acquisition (DDA) method was set up on the QExactive HF with settings: The full MS scan was from 375-1500 m/z acquired in the Orbitrap at a resolution of 120,000 in profile mode. Subsequent fragmentation was Top 10 in the HCD cell, with detection of ions in the Orbitrap using centroid mode, resolution 30,000. The following MS method parameters were used for MS1: Automatic Gain Control (AGC) target 1e6 with a maximum injection time (IT) of 60 ms and MS2: AGC target 1e5, IT of 60 ms and isolation window 2 Da. The intensity threshold was 3.3e4, normalized collision energy 27, charge exclusion was set to unassigned, 1, exclude isotopes was on, apex trigger deactivated. The peptide match was set to preferred with dynamic exclusion of 20 seconds.
+
+### LC-MS/MS data processing
+We performed quantitative proteomic analysis for label free quantification using the MaxLFQ algorithm to generate relative peptide and protein intensity information (Cox et al. 2014) in MaxQuant (Tyanova et al. 2016). We set carbamidomethyl as a fixed modification and acetylation of N-terminus of proteins and oxidation of methionine as variable modifications. For identification a minimum peptide length of 7 was required and a minimum ratio count of two for quantification. False discovery rate was set at 0.01 calculated using a reverse decoy database which we subsequently removed along with contaminants. For protein identification we matched mass spectra to the D. montana predicted proteome. Detailed description of the proteome construction can be found in (Parker et al. 2018). Briefly, the proteome was generated using gene predictions from the Maker2 pipeline (Holt and Yandell 2011) reciprocally blasted against D. virilis proteins (Parker et al. 2018).
+
+
+
+
+![Figure S1.](figs/FigS1.pdf "Collection locations and data acquisition")
+
+
+**Figure S1:** a) Collection locations of *Drosophila montana* populations. b) Male *D. montana* reproductive tract highlighting paired accessory glands (turquoise) and ejaculatory duct and bulb (yellow). Image modified from FlyBase.org after Patterson (1943). c) LC-MS/MS data acquisition experimental design. N = number of male reproductive tracts pooled in each replicate. “X_1A_LFQ.raw” etc. refer to nomenclature used for naming raw mass spectra data.  “X” refers to population (Colorado [C] or Vancouver [V]) followed by tissue type (accessory glands [AG] or ejaculatory ducts and bulbs [EB]); “X_1A/1B” = sample processing technical replicates of biological replicate 1; “X_2_1/2” = LC-MS/MS technical replicates of biological replicate 2; “X_3” = biological replicate 3, ran in singlet.
+
+
+\pagebreak
+
+
+![Figure S2.](figs/FigS2.pdf "SDS-PAGE gel profiles")  
+
+**Figure S2:** SDS-PAGE gel profiles of a) accessory glands and b) ejaculatory ducts and bulbs. One microlitre of each tissue sample was diluted in Laemmli buffer and loaded plus 1µL of Bovine Serum Albumin (BSA) standard (0.15µg/µl). B1-3; Biological replicates 1-3. Images have been cropped. Molecular weight ladder: Fisher BioReagents™ EZ-Run™ Prestained Rec Protein Ladder, range 10 -170 kDa Cat no. BP3603500.
+
+
+$~$
+
+
+![Figure S3.](figs/FigS3.pdf "Secretome and Sfp construction")  
+
+**Figure S3:** Construction of secretomes and seminal fluid protein (Sfp) lists. We retrieved FBgns for *D. melanogaster* genes identified by Sepil et al. (2019) and *D. melanogaster* orthologs for *D. pseudoobscura* genes identified by Karr et al. (2019) and downloaded the corresponding canonical protein sequences from uniprot.com. For *D. montana* we retrieved protein sequences from Parker et al. (2018) for proteins we identified in our analysis. We submitted protein sequences for each species to *SignalP* (Petersen et al. 2011) and *Phobius* (Käll et al. 2004) and combined the resulting lists of proteins containing a signal peptide to generate a list of secretome proteins for each species. For *D. montana* we converted the corresponding *D. virilis* FBgns for each protein to *D. melanogaster* orthologs via FlyBase.org (for 215/245, 88%). To identify Sfps for each species we submitted secretome protein lists to FlyBase.org to retrieve genes with GO terms containing “extracelluar”.
+
+
+![Figure S4.](figs/FigS4.pdf "Secretome and Sfp construction")  
+
+**Figure S4:** Number of proteins identified in each tissue a) and each population b). a) We found 1474 *D. montana* proteins identified by at least two unique peptides, including 79 seminal fluid proteins (Sfps). The list of Sfps was compiled by combining the 55 proteins identified by 2 or more unique peptides with a predicted signal peptide sequence and extracellular annotations via FlyBase.org plus 38 orthologs of *D. melanogaster* Sfps identified by converting *D. virilis* FBgns to *D. melanogaster* orthologs via FlyBase.org. b) The majority of the 1474 proteins were identified in both populations (1322, 90%), while 45, and 107 were only identified in Colorado, and Vancouver, respectively.
+
+
+\pagebreak
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+
+```{r Load packages, include = FALSE}
+library(tidyverse)
+library(pheatmap)
+
+library(ggrepel)
+library(VennDiagram)
+library(viridis)
+
+library(edgeR)
+
+library(knitr)
+```
+
+
+```{r load data and colour pallette, include = FALSE}
+
+RdBu_pal2 <- c(RColorBrewer::brewer.pal(3, "RdBu"))[-2]
+
+# load data
+MQ.wide <- read.csv("data/MaxQuant_proteingroups.csv")
+
+# list of Sfps and corresponding IDs
+dmon_Sfps <- read.csv("data/DmonSfps.csv")
+
+# calculate mean abundance for each protein across all replicates/tissues
+mn_dat <- data.frame(PROTEIN = MQ.wide$PROTEIN, 
+                     mn = rowMeans(MQ.wide %>% 
+                                     select(starts_with("LFQ.intensity.")))) %>% 
+  mutate(log_mn = log2(mn + 1)) # add log2 value
+
+
+# get LFQ ion intensities and subset only proteins ID'd by 2+ unique peptides
+MQ.ion <- MQ.wide %>% 
+  select(PROTEIN, FBgn, FBgn_mel, SYMBOL, Sec, Unique.peptides, starts_with("LFQ.intensity.")) %>% 
+  filter(Unique.peptides >=2) %>% # must have at least 2 unique peptides
+  select(-Unique.peptides)
+
+#remove LFQ.intensity from colnames
+colnames(MQ.ion) <- gsub(pattern = "LFQ.intensity.", replacement = "", x = colnames(MQ.ion))
+
+# percent proteins found after filtering
+nrow(MQ.ion)/nrow(MQ.wide) * 100
+
+# Number of secretome/Sfps/other proteins
+MQ.ion %>% 
+  group_by(Sec) %>% summarise(n_distinct(PROTEIN))
+
+```
+
+
+
+```{r Differential abundance analysis 1 - population comparisons, include = FALSE, fig.height = 8, fig.width = 8, fig.align = "center"}
+
+MQ.ags <- MQ.ion[, c(1:5, grep(pattern = ".AG_.*", x = colnames(MQ.ion)))] # look at how the tech reps compare
+
+
+# keep only proteins found in all 5 replicates
+MQ.ags2 <- MQ.ags[apply(MQ.ags[, 6:15]!=0, 1, all), ]
+
+AG_dat2 <- as.matrix(MQ.ags2[, -c(1:5)])
+rownames(AG_dat2) <- MQ.ags2$PROTEIN
+
+pop <- factor(rep(c("C", "V"), each = 5))
+batch <- factor(c(1, 1, 2, 2, 3, 1, 1, 2, 2, 3))
+samp <- factor(paste0(pop, batch))
+
+
+m1 <- model.matrix(~0 + pop)
+m2 <- model.matrix(~0 + pop + batch)
+m3 <- model.matrix(~0 + pop + samp)
+
+d0 <- DGEList(na.omit(AG_dat2), group = pop)
+dim(d0)
+
+
+# run the TMM normalization
+d1 <- calcNormFactors(d0)
+
+d1 <- estimateDisp(d1)
+
+y <- voom(d1, m2, plot = FALSE)
+
+# Duplicate correlations - see 'https://support.bioconductor.org/p/77093/'
+corfit <- duplicateCorrelation(y, m2, block = samp)
+
+fit <- lmFit(y, m2, correlation = corfit$consensus)
+
+contr <- makeContrasts(popC - popV, levels = colnames(coef(fit)))
+
+tmp <- contrasts.fit(fit, contr)
+
+tmp <- eBayes(tmp)
+
+
+# Diagnostic plots 
+par(mfrow=c(2,2))
+# Biological coefficient of variation
+plotBCV(d1, main = "Dispersion trends")
+# mean-variance trend
+virginoom = voom(d1, m2, plot = TRUE)
+# QQ-plot
+qqt(tmp$t,df=tmp$df.prior+tmp$df.residual,pch=16,cex=0.2)
+abline(0,1)
+# log2 transformed and normalize boxplot of counts across samples
+boxplot(virginoom$E, xlab="", ylab="Log2 counts per million",las=2,main="voom transformed logCPM")
+abline(h=median(virginoom$E),col="blue")
+par(mfrow=c(1,1))
+
+
+# list of differentially abundant proteins
+top.table <- topTable(tmp, sort.by = "P", n = Inf)
+
+length(which(top.table$adj.P.Val < 0.05))
+
+
+top.table$id <- rownames(top.table)
+
+
+ddat2 <- left_join(top.table %>% 
+                     select(-AveExpr, -t, -P.Value, -B) %>% 
+                     mutate(ID = rownames(top.table)),
+                   MQ.ags2 %>% 
+                     select(PROTEIN, FBgn, FBgn_mel, Sec, SYMBOL),
+                   by = c("ID" = "PROTEIN")) %>% 
+  left_join(dmon_Sfps %>% select(PROTEIN, Gene.symbol),
+            by = c("ID" = "PROTEIN")) %>%  
+  mutate(threshold = factor(if_else(adj.P.Val < 0.05, "SD", "NS")),
+         Acp = factor(if_else(is.na(Gene.symbol) == TRUE, "N", "Acp")),
+         ID = factor(ID),
+         Sec = factor(Sec))
+
+ddat2$Sec <- as.character(ddat2$Sec)
+ddat2$Sec[is.na(ddat2$Sec)] <- "All"
+
+
+
+ACPS <- ddat2 %>% 
+  filter(threshold == 'SD' & Acp == "Acp")
+
+
+# heatmap of differentially abundant proteins
+daa <- ddat2 %>% 
+  filter(threshold == 'SD') %>% 
+  pull(id)
+
+pheatmap(log2(MQ.ags2 %>%
+                filter(PROTEIN %in% daa) %>%
+                select(-c(1:5))),
+         scale = "row", # scale by protein
+         show_colnames = T,
+         show_rownames = F,
+         color = viridis::viridis(n = 150),
+         border_color = NA,
+         clustering_distance_cols = "euclidean",
+         clustering_method = "average"
+)
+
+
+
+# EJACULATORY BULBS ONLY --------------------------------------------------
+MQ.ebs <- MQ.ion[, c(1:5, grep(pattern = ".EB_.*", x = colnames(MQ.ion)))] # look at how the tech reps compare
+
+# keep only those found in all 5 replicates
+MQ.ebs2 <- MQ.ebs[apply(MQ.ebs[, 6:15]!=0, 1, all), ]
+
+# Make DGElist
+EB_dat <- as.matrix(MQ.ebs2[, -c(1:5)])
+rownames(EB_dat) <- MQ.ebs2$PROTEIN
+
+dEB <- DGEList(na.omit(EB_dat), group = pop)
+
+# run the TMM normalization
+dEB1 <- calcNormFactors(dEB)
+
+dEB1 <- estimateDisp(dEB1)
+
+yEB <- voom(dEB1, m2, plot = T)
+
+corfitEB <- duplicateCorrelation(yEB, m2, block = samp)
+
+fitEB <- lmFit(yEB, m2, correlation = corfitEB$consensus)
+
+contrEB <- makeContrasts(popC - popV, levels = colnames(coef(fitEB)))
+
+tmpEB <- contrasts.fit(fitEB, contrEB)
+
+tmpEB <- eBayes(tmpEB)
+
+top.tableEB <- topTable(tmpEB, sort.by = "P", n = Inf)
+
+top.tableEB$id <- rownames(top.tableEB)
+
+
+ddatEB <- left_join(top.tableEB %>% 
+                      select(-AveExpr, -t, -P.Value, -B) %>% 
+                      mutate(ID = rownames(top.tableEB)),
+                    MQ.ebs2 %>% 
+                      select(PROTEIN, FBgn, FBgn_mel, Sec),
+                    by = c("ID" = "PROTEIN")) %>% 
+  left_join(dmon_Sfps %>% select(PROTEIN, Gene.symbol),
+            by = c("ID" = "PROTEIN")) %>%  
+  mutate(threshold = factor(if_else(adj.P.Val < 0.05, "SD", "NS")),
+         Acp = factor(if_else(is.na(Gene.symbol) == TRUE, "N", "Acp")),
+         ID = factor(ID),
+         Sec = factor(Sec))
+
+ddatEB$Sec <- as.character(ddatEB$Sec)
+ddatEB$Sec[is.na(ddatEB$Sec)] <- "All"
+
+
+
+ACPSeb <- ddatEB %>% filter(threshold == 'SD' & Acp == "Acp")
+
+
+dae <- ddatEB %>% 
+  filter(threshold == 'SD') %>% 
+  pull(id)
+
+pheatmap(MQ.ebs2 %>% 
+           filter(PROTEIN %in% dae) %>% 
+           select(-c(1:5)), 
+         scale = "row", # scale by protein
+         show_colnames = T, 
+         show_rownames = F, 
+         color = viridis::viridis(n = 100),
+         border_color = NA,
+         clustering_distance_cols = "euclidean", 
+         clustering_method = "average") 
+
+```
+
+
+```{r Figure S5. - Representation of secreted proteins in DA sets, include = TRUE, fig.height = 5, fig.width = 8, fig.align = "center"}
+
+rep_dat <- rbind(ddat2 %>% 
+                   select(id, Sec, threshold) %>% 
+                   mutate(Tissue = "a) Accessory gland proteome"), 
+                 ddatEB %>% 
+                   select(id, Sec, threshold) %>% 
+                   mutate(Tissue = "b) Ejaculatory bulb proteome")) %>% 
+  mutate(threshold = fct_relevel(threshold, "SD", "NS")) %>% 
+  mutate(Sec = fct_recode(Sec, "Secretome" = "Sec"))
+
+rep_dat %>%
+  ggplot(aes(x = Sec, fill = threshold)) +
+  geom_bar(position = 'fill') +
+  scale_fill_brewer(palette = "Set1", labels = c("Differentially abundant", "Not significant")) +
+  facet_wrap(~Tissue) +
+  theme_bw() +
+  theme(legend.position = 'top',
+        legend.title = element_blank(),
+        legend.text = element_text(size = 15),
+        axis.text.x = element_text(size = 15),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        strip.text = element_text(face = "bold", size = 15),
+        strip.background = element_rect(fill = "grey"),
+        plot.background = element_rect(colour = NA)) +
+  geom_text(data = rep_dat %>% 
+              group_by(Tissue, Sec) %>% 
+              summarise(N = n()) %>% 
+              mutate(threshold = 'NS'),
+            aes(y = -0.05, label = paste0("N = ", N)),
+            size = 5)
+
+```
+**Figure S5.** Representation of secretome and seminal fluid proteins (Sfps) in the set of differentially abundant proteins between populations. Secretome proteins and Sfps were equally represented in the set of differentially abundant proteins between Colorado and Vancouver in the accessory gland proteome (Chi-squared test, $\chi^2$ = 1.57, df = 2, p = 0.456) but were overrepresented in the differentially abundant proteins in the ejaculatory bulb proteome ($\chi^2$ = 44.56, df = 2, p < 0.001). N = sample sizes.
+
+
+```{r Figure S6. concordance between populations, include = TRUE, fig.height = 4, fig.width = 4, fig.align = "center"}
+
+concord_dat <- inner_join(top.table,
+                          top.tableEB,
+                          by = 'id') %>% 
+  mutate(sig.x = if_else(adj.P.Val.x < 0.05, "sig", "ns"),
+         sig.y = if_else(adj.P.Val.y < 0.05, "sig", "ns"),
+         s.x = sign(logFC.x),
+         s.y = sign(logFC.y),
+         concord = if_else(s.y == s.x, "same", "diff"),
+         direction = if_else(sig.x == 'sig' & sig.y == 'sig' & concord == 'same' & logFC.y > 0, 'up.col', 
+                             if_else(sig.x == 'sig' & sig.y == 'sig' & concord == 'same' & logFC.y < 0, 'up.van',
+                                     if_else(sig.x == 'sig' & sig.y == 'sig' & concord == 'diff', 'discord',
+                                             'ns')))) %>% 
+  rename(lfc_ag = logFC.x,
+         lfc_eb = logFC.y)
+
+concord_dat %>% 
+  ggplot(aes(x = lfc_ag, y = lfc_eb, colour = direction)) +
+  geom_hline(yintercept = 0, lty = 2, colour = 'grey') +
+  geom_vline(xintercept = 0, lty = 2, colour = 'grey') +
+  geom_point(alpha = .5, size = 3) +
+  scale_colour_manual(values = c('black', 'grey', RdBu_pal2[1], RdBu_pal2[2])) +
+  labs(x= "Accessory gland proteome logFC", y = "Ejaculatory bulb proteome logFC") +
+  theme_bw() +
+  theme(legend.position = 'none') +
+  annotate("text", x = 2, y = 2, size = 5, hjust = 1, colour = 'grey60',
+           label = "Up Colorado") +
+  annotate("text", x = -0.5, y = -2.5, size = 5, hjust = 1, colour = 'grey60',
+           label = "Up Vancouver")
+
+```
+**Figure S6.** Differentially abundant proteins between Colorado and Vancouver found in both the accessory gland proteome and ejaculatory bulb proteome. Proteins showing differential abundance between populations in both tissues showing significant and concordant log2-fold-change abundance are highlighted for Colorado (red, n = 25), Vancouver (blue, n = 11), or discordant (black, n = 9).
+
+
+```{r Evolutionary rates analysis, include = FALSE}
+
+# load PAML data
+omega_vals <- read.csv("data/omega_data.csv")
+
+# proteins DA in AgP/EbP
+DA_dat <- read.csv("data/up_in_tissue.csv")
+
+up_in_AG <- DA_dat %>% filter(up_in == 'Ag', sig == 'sig', concord == 'same') %>% pull(id)
+up_in_EB <- DA_dat %>% filter(up_in == 'Eb', sig == 'sig', concord == 'same') %>% pull(id)
+
+omega_dat <- omega_vals %>% 
+  filter(PROTEIN %in% MQ.ion$PROTEIN == TRUE) %>% 
+  mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, "Sfps", 
+                                 if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sec'] == TRUE, "Secretome",
+                                         if_else(PROTEIN %in% up_in_AG == TRUE, "Acc. gland proteome",
+                                                 if_else(PROTEIN %in% up_in_EB == TRUE, "Ejac. bulb proteome",
+                                                         "Background")))))) %>% na.omit()
+
+# Reorder categories
+omega_dat$Tissue <- ordered(omega_dat$Tissue,
+                            levels = c("Background", "Acc. gland proteome", 
+                                       "Ejac. bulb proteome", "Secretome", 
+                                       "Sfps"))
+
+```
+
+
+```{r Evolutionary rates analysis - Figure S7, include=TRUE, message=FALSE, fig.height = 3.5, fig.width = 8, fig.align = "center"}
+
+omega_dat %>% 
+  mutate(Tissue = factor(Tissue)) %>% na.omit() %>% 
+  dplyr::select(PROTEIN, Tissue, dN, dS) %>% 
+  reshape2::melt() %>% 
+  ggplot(aes(x = Tissue, y = value, colour = Tissue)) + 
+  geom_boxplot() + 
+  scale_colour_manual(values = c('grey', 'turquoise', 'orange', 'blueviolet', 'hotpink')) +
+  facet_wrap(~variable, scales = 'free_y') +
+  theme_bw() +
+  theme(legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 10, colour = 'black', angle = 30, hjust = 1),
+        axis.title.y = element_blank(),
+        strip.text = element_text(face = "bold", size = 25),
+        strip.background = element_rect(fill = "grey"),
+        plot.background = element_rect(colour = NA)) + 
+  NULL
+
+```
+**Figure S7.**  Estimates of non-synonymous (dN; left panel) and synonymous (dS; right panel) substitution rates for *D. montana* genes. Genes are categorised based on showing equal protein abundance in the accessory gland proteome or ejaculatory bulb proteome (‘background’; grey), higher abundance in the accessory gland proteome (turquoise), ejaculatory bulb proteome (orange), or found in the secretome (purple) or Sfps (pink).
+
+\pagebreak
+
+# References
+*  Cox, J., M. Y. Hein, C. A. Luber, I. Paron, N. Nagaraj, and M. Mann. 2014. Accurate Proteome-wide Label-free Quantification by Delayed Normalization and Maximal Peptide Ratio Extraction, Termed MaxLFQ. Mol. Cell. Proteomics MCP 13:2513–2526.  
+*  Holt, C., and M. Yandell. 2011. MAKER2: an annotation pipeline and genome-database management tool for second-generation genome projects. BMC Bioinformatics 12:491.  
+*  Käll, L., A. Krogh, and E. L. L. Sonnhammer. 2004. A Combined Transmembrane Topology and Signal Peptide Prediction Method. J. Mol. Biol. 338:1027–1036.  
+*  Karr, T. L., H. Southern, M. A. Rosenow, T. I. Gossmann, and R. R. Snook. 2019. The Old and the New: Discovery Proteomics Identifies Putative Novel Seminal Fluid Proteins in Drosophila. Mol. Cell. Proteomics 18:S23–S33. American Society for Biochemistry and Molecular Biology.  
+*  Parker, D. J., R. A. W. Wiberg, U. Trivedi, V. I. Tyukmaeva, K. Gharbi, R. K. Butlin, A. Hoikkala, M. Kankare, M. G. Ritchie, and J. Gonzalez. 2018. Inter and intraspecific genomic divergence in Drosophila montana shows evidence for cold adaptation. Genome Biol. Evol. 10:2086–2101.  
+*  Patterson, J. T. 1943. Studies in the genetics of Drosophila. Univ. Tex. Publ. 4313:7–216.  
+*  Petersen, T. N., S. Brunak, G. von Heijne, and H. Nielsen. 2011. SignalP 4.0: discriminating signal peptides from transmembrane regions. Nat. Methods 8:785–786.  
+*  Sepil, I., B. R. Hopkins, R. Dean, M.-L. Thézénas, P. D. Charles, R. Konietzny, R. Fischer, B. M. Kessler, and S. Wigby. 2019. Quantitative proteomics identification of seminal fluid proteins in male Drosophila melanogaster. Mol. Cell. Proteomics 18:S46–S58.  
+*  Tyanova, S., T. Temu, and J. Cox. 2016. The MaxQuant computational platform for mass spectrometry-based shotgun proteomics. Nat. Protoc. 11:2301–2319.  
+*  Vizcaíno, J. A., A. Csordas, N. del-Toro, J. A. Dianes, J. Griss, I. Lavidas, G. Mayer, Y. Perez-Riverol, F. Reisinger, T. Ternent, Q.-W. Xu, R. Wang, and H. Hermjakob. 2016. 2016 update of the PRIDE database and its related tools. Nucleic Acids Res. 44:D447–D456. Oxford Academic.
+
