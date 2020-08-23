@@ -1,7 +1,7 @@
 ---
 title: "Seminal fluid protein divergence among populations exhibiting postmating prezygotic reproductive isolation: supplementary material"
 author: "Martin D. Garlovsky$^1$$^*$, Caroline Evans$^2$, Mathew A. Rosenow$^3$, Timothy L. Karr$^4$ & Rhonda R. Snook$^5$"
-date: "June 2020"
+date: "August 2020"
 output:
   pdf_document:
     toc: no
@@ -32,7 +32,7 @@ RRS: 0000-0003-1852-1448
 
 ***
 
-This markdown document provides supplementary material for Garlovsky, M. D., Caroline Evans, Mathew A. Rosenow, Timothy L. Karr and Rhonda R. Snook "Seminal fluid protein divergence among populations exhibiting postmating prezygotic reproductive isolation". Complete analyses and data are available on [github](https://github.com/MartinGarlovsky/Dmon_ejaculate_proteomics). The mass spectrometry proteomics data have been deposited to the [ProteomeXchange consortium](http://proteomecentral.proteomexchange.org) via the PRIDE partner repository (Vizcaíno et al. 2016) with the dataset identifier PXD019634. The unfiltered *proteinGroups.txt* file exported from MaxQuant has been submitted to Dryad(Additional data has been submitted to [Dryad](https://doi.org/10.5061/dryad.pvmcvdnhw). 
+This markdown document provides supplementary material for Garlovsky, M. D., Caroline Evans, Mathew A. Rosenow, Timothy L. Karr and Rhonda R. Snook "Seminal fluid protein divergence among populations exhibiting postmating prezygotic reproductive isolation". Complete analyses and data are available on [github](https://github.com/MartinGarlovsky/Dmon_ejaculate_proteomics). The mass spectrometry proteomics data have been deposited to the [ProteomeXchange consortium](http://proteomecentral.proteomexchange.org) via the PRIDE partner repository (Vizcaíno et al. 2016) with the dataset identifier PXD019634. The unfiltered *proteinGroups.txt* file exported from MaxQuant has been submitted to [Dryad](https://doi.org/10.5061/dryad.pvmcvdnhw). 
 
 \pagebreak
 
@@ -47,7 +47,7 @@ To quantify protein concentration to standardise loading volumes on to the mass 
 LC-MS/MS was performed by nano-flow liquid chromatography (U3000 RSLCnano, Thermo Fisher™) coupled to a hybrid quadrupole-orbitrap mass spectrometer (QExactive HF, Thermo Scientific™).  Peptides were separated on an Easy-Spray C18 column (75 µm x 50 cm) using a 2-step gradient from 97% solvent A (0.1% formic acid in water) to 10% solvent B (0.08% formic acid in 80% acetonitrile) over 5 min then 10% to 50% B over 75 min at 300 nL/min. A 105-minute MS data dependent acquisition (DDA) method was set up on the QExactive HF with settings: The full MS scan was from 375-1500 m/z acquired in the Orbitrap at a resolution of 120,000 in profile mode. Subsequent fragmentation was Top 10 in the HCD cell, with detection of ions in the Orbitrap using centroid mode, resolution 30,000. The following MS method parameters were used for MS1: Automatic Gain Control (AGC) target 1e6 with a maximum injection time (IT) of 60 ms and MS2: AGC target 1e5, IT of 60 ms and isolation window 2 Da. The intensity threshold was 3.3e4, normalized collision energy 27, charge exclusion was set to unassigned, 1, exclude isotopes was on, apex trigger deactivated. The peptide match was set to preferred with dynamic exclusion of 20 seconds.
 
 ### LC-MS/MS data processing
-We performed quantitative proteomic analysis for label free quantification using the MaxLFQ algorithm to generate relative peptide and protein intensity information (Cox et al. 2014) in MaxQuant (Tyanova et al. 2016). We set carbamidomethyl as a fixed modification and acetylation of N-terminus of proteins and oxidation of methionine as variable modifications. For identification a minimum peptide length of 7 was required and a minimum ratio count of two for quantification. False discovery rate was set at 0.01 calculated using a reverse decoy database which we subsequently removed along with contaminants. For protein identification we matched mass spectra to the D. montana predicted proteome. Detailed description of the proteome construction can be found in (Parker et al. 2018). Briefly, the proteome was generated using gene predictions from the Maker2 pipeline (Holt and Yandell 2011) reciprocally blasted against D. virilis proteins (Parker et al. 2018).
+We performed quantitative proteomic analysis for label free quantification using the MaxLFQ algorithm to generate relative peptide and protein intensity information (Cox et al. 2014) in MaxQuant (Tyanova et al. 2016). We set carbamidomethyl as a fixed modification and acetylation of N-terminus of proteins and oxidation of methionine as variable modifications. For identification a minimum peptide length of 7 was required and a minimum ratio count of two for quantification. False discovery rate was set at 0.01 calculated using a reverse decoy database which we subsequently removed along with contaminants. For protein identification we matched mass spectra to the *D. montana* predicted proteome. Detailed description of the proteome construction can be found in (Parker et al. 2018). Briefly, the proteome was generated using gene predictions from the Maker2 pipeline (Holt and Yandell 2011) reciprocally blasted against D. virilis proteins (Parker et al. 2018).
 
 
 
@@ -317,44 +317,7 @@ pheatmap(MQ.ebs2 %>%
 ```
 
 
-```{r Figure S5. - Representation of secreted proteins in DA sets, include = TRUE, fig.height = 5, fig.width = 8, fig.align = "center"}
-
-rep_dat <- rbind(ddat2 %>% 
-                   select(id, Sec, threshold) %>% 
-                   mutate(Tissue = "a) Accessory gland proteome"), 
-                 ddatEB %>% 
-                   select(id, Sec, threshold) %>% 
-                   mutate(Tissue = "b) Ejaculatory bulb proteome")) %>% 
-  mutate(threshold = fct_relevel(threshold, "SD", "NS")) %>% 
-  mutate(Sec = fct_recode(Sec, "Secretome" = "Sec"))
-
-rep_dat %>%
-  ggplot(aes(x = Sec, fill = threshold)) +
-  geom_bar(position = 'fill') +
-  scale_fill_brewer(palette = "Set1", labels = c("Differentially abundant", "Not significant")) +
-  facet_wrap(~Tissue) +
-  theme_bw() +
-  theme(legend.position = 'top',
-        legend.title = element_blank(),
-        legend.text = element_text(size = 15),
-        axis.text.x = element_text(size = 15),
-        axis.title.x = element_blank(),
-        axis.title.y = element_blank(),
-        strip.text = element_text(face = "bold", size = 15),
-        strip.background = element_rect(fill = "grey"),
-        plot.background = element_rect(colour = NA)) +
-  geom_text(data = rep_dat %>% 
-              group_by(Tissue, Sec) %>% 
-              summarise(N = n()) %>% 
-              mutate(threshold = 'NS'),
-            aes(y = -0.05, label = paste0("N = ", N)),
-            size = 5)
-
-```
-**Figure S5.** Representation of secretome and seminal fluid proteins (Sfps) in the set of differentially abundant proteins between populations. Secretome proteins and Sfps were equally represented in the set of differentially abundant proteins between Colorado and Vancouver in the accessory gland proteome (Chi-squared test, $\chi^2$ = 1.57, df = 2, p = 0.456) but were overrepresented in the differentially abundant proteins in the ejaculatory bulb proteome ($\chi^2$ = 44.56, df = 2, p < 0.001). N = sample sizes.
-
-
-```{r Figure S6. concordance between populations, include = TRUE, fig.height = 4, fig.width = 4, fig.align = "center"}
+```{r Figure S5. concordance between populations, include = TRUE, fig.height = 4, fig.width = 4, fig.align = "center"}
 
 concord_dat <- inner_join(top.table,
                           top.tableEB,
@@ -386,7 +349,7 @@ concord_dat %>%
            label = "Up Vancouver")
 
 ```
-**Figure S6.** Differentially abundant proteins between Colorado and Vancouver found in both the accessory gland proteome and ejaculatory bulb proteome. Proteins showing differential abundance between populations in both tissues showing significant and concordant log2-fold-change abundance are highlighted for Colorado (red, n = 25), Vancouver (blue, n = 11), or discordant (black, n = 9).
+**Figure S5.** Differentially abundant proteins between Colorado and Vancouver found in both the accessory gland proteome and ejaculatory bulb proteome. Proteins showing differential abundance between populations in both tissues showing significant and concordant log2-fold-change abundance are highlighted for Colorado (red, n = 25), Vancouver (blue, n = 11), or discordant (black, n = 9).
 
 
 ```{r Evolutionary rates analysis, include = FALSE}
@@ -402,7 +365,8 @@ up_in_EB <- DA_dat %>% filter(up_in == 'Eb', sig == 'sig', concord == 'same') %>
 
 omega_dat <- omega_vals %>% 
   filter(PROTEIN %in% MQ.ion$PROTEIN == TRUE) %>% 
-  mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, "Sfps", 
+  mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, 
+                                 "Secretome", # change this to 'Sfp' to split Sfps from secretime
                                  if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sec'] == TRUE, "Secretome",
                                          if_else(PROTEIN %in% up_in_AG == TRUE, "Acc. gland proteome",
                                                  if_else(PROTEIN %in% up_in_EB == TRUE, "Ejac. bulb proteome",
@@ -417,7 +381,7 @@ omega_dat$Tissue <- ordered(omega_dat$Tissue,
 ```
 
 
-```{r Evolutionary rates analysis - Figure S7, include=TRUE, message=FALSE, fig.height = 3.5, fig.width = 8, fig.align = "center"}
+```{r Evolutionary rates analysis - Figure S6, include=TRUE, message=FALSE, fig.height = 3.5, fig.width = 8, fig.align = "center"}
 
 omega_dat %>% 
   mutate(Tissue = factor(Tissue)) %>% na.omit() %>% 
@@ -438,7 +402,7 @@ omega_dat %>%
   NULL
 
 ```
-**Figure S7.**  Estimates of non-synonymous (dN; left panel) and synonymous (dS; right panel) substitution rates for *D. montana* genes. Genes are categorised based on showing equal protein abundance in the accessory gland proteome or ejaculatory bulb proteome (‘background’; grey), higher abundance in the accessory gland proteome (turquoise), ejaculatory bulb proteome (orange), or found in the secretome (purple) or Sfps (pink).
+**Figure S6.**  Estimates of non-synonymous (dN; left panel) and synonymous (dS; right panel) substitution rates for *D. montana* genes. Genes are categorised based on showing equal protein abundance in the accessory gland proteome or ejaculatory bulb proteome (‘background’; grey), higher abundance in the accessory gland proteome (turquoise), ejaculatory bulb proteome (orange), or found in the secretome (including putative Sfps; purple).
 
 \pagebreak
 

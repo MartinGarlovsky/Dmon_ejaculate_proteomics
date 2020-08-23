@@ -186,7 +186,7 @@ ggplot(mn_dat, aes(x = tissue, y = log_mn, fill = tissue)) +
         strip.background = element_rect(fill = "grey"),
         plot.title = element_text(hjust = 0.5),
         plot.background = element_rect(colour = NA)) +
-  geom_text(data = mn_dat2 %>% 
+  geom_text(data = mn_dat %>% 
               group_by(tissue) %>% 
               summarise(N = n()),
             aes(y = 12, label = paste0("n = ", N)), 
@@ -217,7 +217,7 @@ ggplot(mn_dat, aes(x = pop.sp, y = log_mn, fill = pop.sp)) +
         strip.background = element_rect(fill = "grey"),
         plot.title = element_text(hjust = 0.5),
         plot.background = element_rect(colour = NA)) +
-  geom_text(data = mn_dat2 %>% 
+  geom_text(data = mn_dat %>% 
               group_by(pop.sp) %>% 
               summarise(N = n()),
             aes(y = 12, label = paste0("n = ", N)), 
@@ -517,7 +517,7 @@ pheatmap(MQ.ebs2 %>%
 
 # Figure 2. Combined Volcano plots ----------------------------------------
 
-rbind(ddat2 %>% 
+rbind(acg_results2 %>% 
         select(logFC, adj.P.Val, ID, Gene.symbol, Sec, threshold) %>% 
         mutate(Tissue = "a) Accessory gland proteome"), 
       ddatEB %>% 
@@ -539,7 +539,7 @@ rbind(ddat2 %>%
   annotate("text", x = -2.75, y = 0, size = 5, hjust = 0.5,
            label = "Vancouver", colour = 'grey60') +
   geom_label_repel(
-    data = rbind(ddat2 %>% 
+    data = rbind(acg_results2 %>% 
                    select(logFC, adj.P.Val, ID, Gene.symbol, Acp, Sec, threshold) %>% 
                    mutate(Tissue = "a) Accessory gland proteome") %>% 
                    filter(threshold == 'SD' & Acp == "Acp"), 
@@ -558,9 +558,9 @@ rbind(ddat2 %>%
 # Representation of secreted proteins in DA proteins -------
 
 # Accessory gland proteome
-table(ddat2$Sec, ddat2$threshold)
+table(acg_results2$Sec, acg_results2$threshold)
 
-chisq.test(table(ddat2$Sec, ddat2$threshold))
+chisq.test(table(acg_results2$Sec, acg_results2$threshold))
 
 # Ejaculatory bulb proteome
 
@@ -570,7 +570,7 @@ chisq.test(table(ddatEB$Sec, ddatEB$threshold))
 
 
 # Figure S5 ---------------------------------------------------------------
-rep_dat <- rbind(ddat2 %>% 
+rep_dat <- rbind(acg_results2 %>% 
                    select(id, Sec, threshold) %>% 
                    mutate(Tissue = "a) Accessory gland proteome"), 
                  ddatEB %>% 
@@ -604,7 +604,7 @@ rep_dat %>%
 
 # Figure S6 concordant log2fold change between populations ----------------------------
 
-concord_dat <- inner_join(top.table,
+concord_dat <- inner_join(acg_results,
                           top.tableEB,
                           by = 'id') %>% 
   mutate(sig.x = if_else(adj.P.Val.x < 0.05, "sig", "ns"),
@@ -633,6 +633,24 @@ concord_dat %>%
   annotate("text", x = -0.4, y = -2.5, size = 5, hjust = 1, colour = 'grey60',
            label = "Up Vancouver")
 
+
+
+# Response to reviewer 3 ----
+# Do proteins showing differential abundance overlap with genes showing divergence between populations 
+# from Parker et al. (2018)?
+
+# load Parker et al. 2018 supp. table 19. 
+# genes which have both an elevated rate of evolution between species and significant divergence 
+# in at least one population comparison. 				
+parker_st19 <- read.csv('data/Parker_2018_Supplemental_Table_19.csv')
+head(parker_st19)
+str(parker_st19)
+
+inner_join(parker_st19,
+           full_join(acg_results2 %>% filter(threshold == 'SD'),
+                     ddatEB %>% filter(threshold == 'SD'),
+                     by = c('ID', 'id', 'FBgn', 'FBgn_mel', 'Sec', 'Gene.symbol', 'Acp')),
+           by = c('vir_FBN' = 'FBgn'))
 
 
 # Differential abundance analysis between tissues -----------------------------------------
@@ -856,7 +874,7 @@ t_dat %>%
 # Correlation of log2foldchange in abundance between populations
 cor.test(t_dat$Col_logFC, t_dat$Van_logFC, method = 's')
 
-# Figure 3a
+# Figure 3a ----
 t_dat %>% 
   ggplot(aes(x = Col_logFC, y = Van_logFC)) +
   geom_hline(yintercept = 0, lty = 2, colour = 'grey') +
@@ -918,21 +936,37 @@ up_in_AG <- t_dat %>% filter(up_in == 'Ag', sig == 'sig', concord == 'same') %>%
 up_in_EB <- t_dat %>% filter(up_in == 'Eb', sig == 'sig', concord == 'same') %>% pull(id)
 
 
+# omega_dat <- omega_vals %>% 
+#   filter(PROTEIN %in% MQ.ion$PROTEIN == TRUE) %>% 
+#   mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, "Sfps", 
+#                                  if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sec'] == TRUE, "Secretome",
+#                                          if_else(PROTEIN %in% up_in_AG == TRUE, "Acc. gland proteome",
+#                                                  if_else(PROTEIN %in% up_in_EB == TRUE, "Ejac. bulb proteome",
+#                                                          "Background")))))) %>% na.omit()
+# 
+# omega_dat$Tissue <- ordered(omega_dat$Tissue,
+#                             levels = c("Background", "Acc. gland proteome", 
+#                                        "Ejac. bulb proteome", "Secretome", 
+#                                        "Sfps"))
+
 omega_dat <- omega_vals %>% 
   filter(PROTEIN %in% MQ.ion$PROTEIN == TRUE) %>% 
-  mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, "Sfps", 
-                                 if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sec'] == TRUE, "Secretome",
-                                         if_else(PROTEIN %in% up_in_AG == TRUE, "Acc. gland proteome",
-                                                 if_else(PROTEIN %in% up_in_EB == TRUE, "Ejac. bulb proteome",
-                                                         "Background")))))) %>% na.omit()
-
+  mutate(Tissue = factor(if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sfp'] == TRUE, 
+                                 "Secretome", # change this to 'Sfp' to split Sfps from secretime
+                                 if_else(PROTEIN %in% MQ.ion$PROTEIN[MQ.ion$Sec == 'Sec'] == TRUE, 
+                                         "Secretome",
+                                         if_else(PROTEIN %in% up_in_AG == TRUE, 
+                                                 "Acc. gland proteome",
+                                                 if_else(PROTEIN %in% up_in_EB == TRUE, 
+                                                         "Ejac. bulb proteome",
+                                                         "Background")))))) #%>% na.omit()
 
 omega_dat$Tissue <- ordered(omega_dat$Tissue,
                             levels = c("Background", "Acc. gland proteome", 
                                        "Ejac. bulb proteome", "Secretome", 
                                        "Sfps"))
 
-# Figure 4.
+# Figure 4 ----
 omega_dat %>% 
   group_by(Tissue) %>% 
   summarise(mn_w = mean(dN.dS),
@@ -953,7 +987,10 @@ omega_dat %>%
         plot.background = element_rect(colour = NA)) + 
   geom_text(aes(y = 0.03, label = paste0("n = ", N)), 
             size = 5, colour = "black") +
+  geom_text(aes(y = 0.065, label = c('a', 'b', 'b', 'c')), 
+            size = 5, colour = "black", fontface = 'bold') +
   NULL
+
 
 # Figure S7
 omega_dat %>% 
